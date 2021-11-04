@@ -1,0 +1,51 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #000222;
+
+  --text: #ffffff;
+  --text2: #a8a8b3;
+  --gray: #e1e1e1;
+
+  --color1: #61dafb;
+  --color2: #6c63ff;
+
+  --border: #000769;
+}
+
+@media (max-width: 1080px) {
+  html {
+    font-size: 93.75%;
+  }
+}
+@media (max-width: 720px) {
+  html {
+    font-size: 87.5%;
+  }
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+body,
+input,
+textarea,
+select,
+button {
+  font: 400 1rem 'Poppins', sans-serif;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}

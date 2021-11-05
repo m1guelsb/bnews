@@ -1,6 +1,5 @@
 .signInButton {
   height: 3rem;
-  max-width: 15rem;
   border-radius: 3rem;
   border: 2px solid var(--border);
   background: var(--color2);
@@ -26,9 +25,18 @@
     margin-right: -0.3rem;
   }
 
-  transition: transform 0.2s;
+  transition: transform 0.1s;
   &:hover {
     transform: scale(104%);
     transform-origin: center;
+  }
+
+  .userAvatarContainer {
+    height: 30px;
+    width: 30px;
+    margin-right: 0.5rem;
+  }
+  .userAvatar {
+    border-radius: 50%;
   }
 }

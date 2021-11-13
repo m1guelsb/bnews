@@ -9,47 +9,43 @@ import styles from './styles.module.scss';
 
 export function SignInButton() {
   const [session] = useSession();
-  const userData = {
-    name : session?.user.name,
-    email : session?.user.email,
-    avatar : session?.user.image,
-  }
 
   function logOut() {
-    console.log(window.confirm)
-    const confirmLogOut = window.confirm('Are you sure that you want to logout?')
+    console.log(window.confirm);
+    const confirmLogOut = window.confirm(
+      'Are you sure that you want to logout?'
+    );
     if (confirmLogOut === true) {
       signOut();
     }
   }
-  
+
   return session ? (
-    <button 
+    <button
       type="button"
       className={styles.signInButton}
-      onClick={()=> logOut()}
+      onClick={() => logOut()}
     >
       <div className={styles.userAvatarContainer}>
         <Img
-          src={userData.avatar}
-          alt={`${userData.name}avatar`}
+          src={session.user.image}
+          alt={`${session.user.name}avatar`}
           height="30px"
           width="30px"
           className={styles.userAvatar}
         />
       </div>
-      {userData.name}
-      <FiX color="lightgrey" className={styles.closeIcon}/>
+      {session.user.name}
+      <FiX color="lightgrey" className={styles.closeIcon} />
     </button>
   ) : (
-    <button 
+    <button
       type="button"
       className={styles.signInButton}
-      onClick={()=> signIn('github')}
+      onClick={() => signIn('github')}
     >
-      <FaGithub color="white"/>
+      <FaGithub color="white" />
       Sign in with Github
     </button>
   );
-
 }

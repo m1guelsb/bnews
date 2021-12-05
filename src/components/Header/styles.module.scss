@@ -1,6 +1,8 @@
 .headerContainer {
   height: 5rem;
   border-bottom: 1px solid var(--border);
+
+  z-index: 2;
 }
 
 .headerContent {

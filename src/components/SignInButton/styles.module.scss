@@ -27,8 +27,11 @@
 
   transition: transform 0.1s;
   &:hover {
-    transform: scale(104%);
+    transform: scale(103%);
     transform-origin: center;
+  }
+  &:active {
+    transform: scale(98%);
   }
 
   .userAvatarContainer {

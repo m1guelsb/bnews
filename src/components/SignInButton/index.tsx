@@ -1,14 +1,20 @@
-import { FaGithub } from 'react-icons/fa';
+import { FaGithub, FaSignOutAlt } from 'react-icons/fa';
 import { FiX } from 'react-icons/fi';
 
 import Img from 'next/image';
 
-import { signIn, signOut, useSession } from 'next-auth/client';
+import {
+  signIn,
+  signOut,
+  useSession
+} from 'next-auth/react';
 
 import styles from './styles.module.scss';
 
 export function SignInButton() {
-  const [session] = useSession();
+  const { data: session } = useSession();
+
+  console.log(`session`, session);
 
   function logOut() {
     console.log(window.confirm);
@@ -29,14 +35,14 @@ export function SignInButton() {
       <div className={styles.userAvatarContainer}>
         <Img
           src={session.user.image}
-          alt={`${session.user.name}avatar`}
+          alt={`${session.user.name} avatar`}
           height="30px"
           width="30px"
           className={styles.userAvatar}
         />
       </div>
       {session.user.name}
-      <FiX color="lightgrey" className={styles.closeIcon} />
+      <FaSignOutAlt className={styles.closeIcon} />
     </button>
   ) : (
     <button
